@@ -1,4 +1,5 @@
 import 'dart:convert';
+import '../helpers/consts.dart';
 
 class Movie {
   final int id;
@@ -14,6 +15,10 @@ class Movie {
     required this.releaseDate,
     required this.overview,
   });
+
+  String getPosterImage() {
+    return imageUrlPrefix + imageUrl;
+  }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{

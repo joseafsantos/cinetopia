@@ -24,6 +24,7 @@ class SearchPopularMoviesService implements SearchMoviesService {
         }
         for (Movie movie in movies) {
           print(movie.title);
+          print("URL poster: ${imageUrlPrefix + movie.imageUrl}");
         }
       } else {
         throw Exception(response.body);
