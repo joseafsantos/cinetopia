@@ -62,14 +62,14 @@ class SearchForMovie implements SearchMoviesService {
   }
 }
 
-class SearchUpcomingMovies implements SearchMoviesService {
+class SearchForUpcomingMovies implements SearchMoviesService {
   List<Movie> movies = <Movie>[];
 
   @override
   Future<List<Movie>> getMovies() async {
     try {
       final response = await http.get(
-        Uri.parse(upcomingMovies),
+        Uri.parse(upcomingMoviesUrl),
         headers: requestHeader,
       );
       if (response.statusCode == 200) {
